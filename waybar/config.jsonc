@@ -1,0 +1,61 @@
+{
+    "layer":"top",
+    "margin-left":5,
+    "margin-right":5,
+    "margin-top":5,
+    "modules-left":["hyprland/workspaces"],
+    "modules-center":["cpu","memory"],
+    "modules-right":["tray","bluetooth","network#wifi","network#ethernet","wireplumber","backlight","battery","clock#time"],
+
+    "clock#time": {
+        "format": "{:%H:%M}",
+        "interval": 1
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 3,
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁿","󰂀","󰂁","󰂂","󰁹"],
+        "format-charging": "󰂄 {capacity}%"
+    },
+    "wireplumber": {
+	    "on-click": "pavucontrol",
+      "format":"{icon} {volume}%",
+      "format-icons":["󰕿","󰖀","󰕾"],
+      "format-muted":"󰖁 {volume}%"
+    },
+    "network#wifi":{
+      "interface":"wlan0",
+      "interval":5,
+      "format-icons":["󰤟","󰤢","󰤥","󰤨"],
+      "format-disconnected":"󰤭",
+      "format":"{icon}",
+      "on-click": "iwgtk"
+    },
+    "network#ethernet":{
+      "interface":"enp0s13f0u2u3c2",
+      "interval":5,
+      "format":"󰈀",
+      "format-disconnected":"",
+      "on-click": "iwgtk"
+    },
+    "cpu":{
+      "format":" {load}%",
+      "interval":5
+    },
+    "memory":{
+      "format":"󰍛 {percentage}%"
+    },
+    "backlight":{
+      "format":"{icon} {percent}%",
+      "format-icons":["󰛩","󱩎","󱩏","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"]
+    },
+    "bluetooth":{
+      "format-disabled":"󰂲",
+      "format-connected":"󰂱",
+      "format":"󰂯",
+      "interval":5,
+      "on-click":"blueman-manager"
+    }
+
+}
